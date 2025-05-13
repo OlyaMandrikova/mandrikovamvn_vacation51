@@ -11,7 +11,8 @@ public class VacationCounter {
         for (int month = 0; month < 12; month++) {
             if (money >= threshold) { // можем ли отдыхать?
                 count++; // увеличиваем счётчик месяцев отдыха
-                money = money - expenses - (((money - expenses) / 3) * 2);
+                int clearProfit = money - expenses;
+                money = clearProfit - (clearProfit / 3) * 2;
             } else {
                 money = money + income - expenses;
                 /* System.out.println("Количество месяцев для отдыха в году - " + count);*/
